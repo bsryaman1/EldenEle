@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const userRoutes = require("./routes/UserRoutes");
+const advertRouter= require("./routes/AdvertRouters");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -20,7 +21,15 @@ mongoose
     console.log(err.message);
   });
 
-app.use("/api/user", userRoutes);
+  // Rota tanımlamaları
+app.use("/", userRoutes);
+app.use("/adverts",advertRouter);
+
+// Hata yönetimi
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: "Internal Server Error" });
+});
 
 app.listen(5000, () => {
   console.log("server started on port 5000");
