@@ -8,7 +8,6 @@ const HomeAndGarden = require("../models/category_Models/HomeAndGardenModel");
 const SecondHand = require("../models/category_Models/SecondHandModel");
 const SparePart = require("../models/category_Models/SparePartModel");
 const Image = require("../models/ImageModel");
-const mongoose = require('mongoose');
 
 // Tüm ilanları getirme
 const getAllAdverts = async (req, res) => {

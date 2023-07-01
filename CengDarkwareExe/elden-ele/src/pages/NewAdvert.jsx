@@ -113,7 +113,6 @@ function NewAdvert() {
           }
       
           const uploadedImages = [];
-      
           for (const image of selectedImages) {
             const { filename, mimetype, buffer } = image;
       
@@ -124,9 +123,6 @@ function NewAdvert() {
       
             const savedImage = await uploadedImage.save();
             uploadedImages.push(savedImage);
-      
-            // İmaj işleme veya yükleme işlemleri burada yapılabilir
-      
             console.log('Image başarıyla yüklendi:', savedImage);
           }
       
